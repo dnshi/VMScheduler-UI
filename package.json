@@ -1,7 +1,7 @@
 {
   "name": "vms-ui",
   "version": "0.0.1",
-  "description": "",
+  "description": "This repo is the Front end of the ACL VM Scheduler",
   "scripts": {
     "start": "node --harmony_arrow_functions node_modules/gulp/bin/gulp.js",
     "build": "node --harmony_arrow_functions node_modules/gulp/bin/gulp.js build",
