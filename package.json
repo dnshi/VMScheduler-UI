@@ -1,5 +1,5 @@
 {
-  "name": "vms-ui",
+  "name": "VMScheduler-UI",
   "version": "0.0.1",
   "description": "This repo is the Front end of the ACL VM Scheduler",
   "scripts": {
