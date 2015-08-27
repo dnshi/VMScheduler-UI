@@ -1,0 +1,17 @@
+env:
+    node: true,         // Node.js global variables and Node.js-specific rules
+    jquery: true,       // jquery global variables
+    es6: true           // enable all ECMAScript 6 features except for modules
+
+globals:
+    angular: true
+
+extends:
+    "standard"
+
+parser:
+    "babel-eslint"
+
+rules:
+    semi: [2, "always"]
+    space-before-function-paren: [2, "never"]
