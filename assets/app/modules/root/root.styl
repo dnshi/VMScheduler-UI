@@ -1,13 +1,49 @@
 body
-  background #545454!important
+  background $grey!important
 
-main.main.container
+// Progress Bar
+#nprogress
+  .bar
+    background $light-green
+    box-shadow 0 0 5px $light-green
+
+  .peg
+    box-shadow 0 0 10px $green, 0 0 5px $green
+
+  .spinner-icon
+    border-top-color $light-teal
+    border-left-color $light-teal
+
+// Aside
+aside.ui.right.reservation.sidebar
+  padding 1.1em
+  background-color $light-grey
+  box-shadow: 0 0 15px $grey
+
+  .ui.floating.label
+    left initial
+    right -3%
+
+  .field
+    padding-top 0.3em
+
+  .ui.action.buttons
+    width 100%
+
+  .ui.reservation.header
+    margin-top 0.3em
+
+
+// Header
+header.ui.menu:not(.vertical) .item>.button
+  font-size .85714286rem
+
+// Container
+.wrapper
+  position absolute
+  trbl 45px 0 0
   background white
+  overflow auto
 
-#nprogress .bar
-  // background #98dc8a
-  background #0f0
-  box-shadow 0 0 5px #88bf4f
-
-#nprogress .peg
-  box-shadow 0 0 10px #0f0, 0 0 5px #0f0;
+  .ui.container
+    margin-top 1em

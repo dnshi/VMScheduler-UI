@@ -1,15 +1,59 @@
-<aside class="ui right sidebar">
+<aside class="ui right reservation sidebar">
   <form class="ui form">
+    <h4 class="ui reservation header">
+      <i class="edit icon"></i>
+      <div class="content">Reservation</div>
+    </h4>
     <div class="field">
-      <label>IP</label>
-      <input type="text" name="ip-field" placeholder="xxx.xxx.xxx.xxx">
+      <div class="ui left icon input">
+        <i class="location arrow icon"></i>
+        <input type="text" name="ip-field" placeholder="xxx.xxx.xxx.xxx">
+        <div class="floating ui teal tiny label">IP</div>
+      </div>
     </div>
     <div class="field">
-      <label>Team</label>
-      <input type="text" name="team-name" placeholder="Team Name">
+      <div class="ui left icon input">
+        <i class="group icon"></i>
+        <input type="text" name="team-name-field" placeholder="Team Name">
+        <div class="floating ui teal tiny label">Team Name</div>
+      </div>
     </div>
     <div class="field">
+      <div class="ui left icon input">
+        <i class="calendar icon"></i>
+        <input type="date" name="start-date-field" placeholder="Start Date" required>
+        <div class="floating ui teal tiny label">Start Time</div>
+      </div>
+      <div class="ui left icon input">
+        <i class="time icon"></i>
+        <input type="time" name="input" ng-model="reservation.value" placeholder="HH:mm" min="08:00" max="17:00" required>
+      </div>
     </div>
-    <button class="ui button" type="submit">Submit</button>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="stop icon"></i>
+        <input type="date" name="end-time-field" placeholder="End Time">
+        <div class="floating ui teal tiny label">End Time</div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui action buttons">
+        <div class="ui fade animated positive button"
+            tabindex="0"
+            ng-click="reservation.confirm()">
+          <div class="visible content">Confirm</div>
+          <div class="hidden content">
+            <i class="send icon"></i>Send</div>
+        </div>
+        <div class="or"></div>
+        <div class="ui fade animated negative button"
+            tabindex="0"
+            ng-click="reservation.discard()">
+          <div class="visible content">Discard</div>
+          <div class="hidden content">
+            <i class="reply icon"></i>Back</div>
+        </div>
+      </div>
+    </div>
   </form>
 </aside>

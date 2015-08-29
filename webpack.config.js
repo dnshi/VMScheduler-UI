@@ -31,7 +31,16 @@ module.exports = (CONF, build) => {
       'webpack/hot/dev-server',
       CONF.js
     ],
-    vendors: ['jquery', 'moment', 'angular', 'ui-router', 'semantic', 'fullcalendar', 'nprogress']
+    vendors: [
+      'jquery',
+      'moment',
+      'angular',
+      'ui-router',
+      'semantic',
+      'fullcalendar',
+      'fullcalendar-scheduler',
+      'nprogress'
+    ]
   };
 
   /**

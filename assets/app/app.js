@@ -1,10 +1,3 @@
-// import libs
-import 'jquery';
-import 'moment';
-import 'angular';
-import 'ui-router';
-import 'semantic';
-import 'fullcalendar';
 import NProgress from 'nprogress';
 
 import '../main.styl';
@@ -21,7 +14,7 @@ let config = ($urlRouterProvider, $locationProvider) => {
 };
 
 let run = ($rootScope) => {
-  $rootScope.$on('$stateChangeStart', () => NProgress.start());
+  $rootScope.$on('$stateChangeStart', NProgress.start);
 
   $rootScope.$on('$stateChangeSuccess', () => setTimeout(NProgress.done, 300));
 
