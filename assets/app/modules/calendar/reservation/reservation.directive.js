@@ -1,42 +1,51 @@
-class Ctrl {
-  static $inject = ['$element']
+class ReservationCtrl {
+  static $inject = ['$scope', '$element', '$q']
+  event = {}
 
-  constructor($element) {
-    this.el = $element;
-    this.init();
+  constructor(...args) {
+    [this.scope, this.el, this.$q] = args;
 
-    this.value = new Date(1970, 0, 1, 14, 57, 0);
-  }
-
-  init() {
     this.el
       .sidebar({
         closable: false,
         context: angular.element('#page-container'),
         transition: 'scale down'
-      })
-      .sidebar('attach events', '#vms-create-new');
+      });
+  }
+
+  trigger(event) {
+    if (event) {
+      angular.extend(this.event, event);
+      this.scope.$digest();
+    }
+    this.el
+      .sidebar('toggle');
+
+    return (this.deferred = this.$q.defer()).promise;
   }
 
   confirm() {
-    this.el
-      .sidebar('hide');
+    let {el, event} = this;
+
+    el.sidebar('hide');
+    this.deferred.resolve(event);
   }
 
   discard() {
     this.el
       .sidebar('hide');
+
+    this.deferred.reject();
   }
 }
 
-let Reservation = () => ({
+export default () => ({
   restrict: 'E',
   replace: true,
   transclude: true,
   template: require('./reservation.html'),
   scope: false,
   controllerAs: 'reservation',
-  controller: Ctrl
+  controller: ReservationCtrl,
+  bindToController: true,
 });
-
-export default Reservation;

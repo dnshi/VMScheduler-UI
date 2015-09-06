@@ -1,39 +1,56 @@
 <aside class="ui right reservation sidebar">
   <form class="ui form">
-    <h4 class="ui reservation header">
+    <h4 class="ui reservation horizontal divider header">
       <i class="edit icon"></i>
       <div class="content">Reservation</div>
     </h4>
     <div class="field">
       <div class="ui left icon input">
         <i class="location arrow icon"></i>
-        <input type="text" name="ip-field" placeholder="xxx.xxx.xxx.xxx">
+        <input type="text" name="ip-field" ng-model="reservation.event.resource.ip" placeholder="xxx.xxx.xxx.xxx">
         <div class="floating ui teal tiny label">IP</div>
       </div>
     </div>
     <div class="field">
       <div class="ui left icon input">
         <i class="group icon"></i>
-        <input type="text" name="team-name-field" placeholder="Team Name">
+        <input type="text" name="team-name-field" ng-model="reservation.event.resource.teamName" placeholder="Team Name">
         <div class="floating ui teal tiny label">Team Name</div>
       </div>
     </div>
     <div class="field">
       <div class="ui left icon input">
         <i class="calendar icon"></i>
-        <input type="date" name="start-date-field" placeholder="Start Date" required>
+        <input type="date" name="start-date-field" ng-model="reservation.event.start._d" placeholder="Start Date" required>
         <div class="floating ui teal tiny label">Start Time</div>
       </div>
       <div class="ui left icon input">
         <i class="time icon"></i>
-        <input type="time" name="input" ng-model="reservation.value" placeholder="HH:mm" min="08:00" max="17:00" required>
+        <input type="time" name="start-time-field" ng-model="reservation.event.start._d" placeholder="HH:mm" required>
       </div>
     </div>
     <div class="field">
       <div class="ui left icon input">
-        <i class="stop icon"></i>
-        <input type="date" name="end-time-field" placeholder="End Time">
+        <i class="calendar icon"></i>
+        <input type="date" name="end-date-field" ng-model="reservation.event.end._d" placeholder="End Time" required>
         <div class="floating ui teal tiny label">End Time</div>
+      </div>
+      <div class="ui left icon input">
+        <i class="time icon"></i>
+        <input type="time" name="end-time-field" ng-model="reservation.event.end._d" placeholder="HH:mm" required>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="write icon"></i>
+        <input type="text" name="team-name-field" ng-model="reservation.event.title" placeholder="Title">
+        <div class="floating ui teal tiny label">Title</div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui left icon input">
+        <textarea type="text" name="team-name-field" ng-model="reservation.event.description" placeholder="Description"></textarea>
+        <div class="floating ui teal tiny label">Description</div>
       </div>
     </div>
     <div class="field">

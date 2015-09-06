@@ -56,7 +56,7 @@
     "semantic": "./node_modules/semantic-ui-css/semantic.min.js",
     "fullcalendar": "./node_modules/fullcalendar/dist/fullcalendar.min.js",
     "fullcalendar-scheduler": "./node_modules/fullcalendar-scheduler/dist/scheduler.min.js",
-    "moment": "./node_modules/moment/min/moment.min.js",
+    "moment": "./node_modules/moment/min/moment-with-locales.min.js",
     "nprogress": "./node_modules/nprogress/nprogress.js"
   }
 }

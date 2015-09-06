@@ -3,9 +3,7 @@ let Container = () => ({
   replace: true,
   transclude: true,
   template: require('./container.html'),
-  scope: false,
-
-  controller: () => {}
+  scope: false
 });
 
 export default Container;

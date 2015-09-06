@@ -1,24 +1,27 @@
 body
   background $grey!important
 
+
 // Progress Bar
 #nprogress
   .bar
-    background $light-green
-    box-shadow 0 0 5px $light-green
+    background $progress-bar-color
+    box-shadow 0 0 5px $progress-bar-color
 
   .peg
-    box-shadow 0 0 10px $green, 0 0 5px $green
+    box-shadow 0 0 10px $progress-peg-color,
+               0 0 5px $progress-peg-color
 
   .spinner-icon
-    border-top-color $light-teal
-    border-left-color $light-teal
+    border-top-color $progress-spinner-color
+    border-left-color $progress-spinner-color
+
 
 // Aside
 aside.ui.right.reservation.sidebar
   padding 1.1em
-  background-color $light-grey
-  box-shadow: 0 0 15px $grey
+  background-color $background-color
+  box-shadow 0 0 15px $grey
 
   .ui.floating.label
     left initial
@@ -33,17 +36,83 @@ aside.ui.right.reservation.sidebar
   .ui.reservation.header
     margin-top 0.3em
 
+  .ui.buttons .or:before
+    content "\f133"
+    font-family Icons
+
 
 // Header
-header.ui.menu:not(.vertical) .item>.button
+header.ui.borderless.menu .labeled.icon.button
   font-size .85714286rem
+
 
 // Container
 .wrapper
   position absolute
   trbl 45px 0 0
-  background white
+  background $background-color
   overflow auto
 
   .ui.container
     margin-top 1em
+
+
+// FullCalendar
+.fc-timeline
+  background-color $white
+
+  .fc-cell-content
+    line-height 40px
+
+.fc-view-container
+  line-height initial
+
+  .fc-timeline-event
+    padding 5px
+
+.fc-time-area .fc-cell-content
+  text-align center
+
+.fc-time-area .fc-event
+  line-height 2.3
+
+.fc-resource-area .fc-cell-content span
+  margin-left 10px !important
+
+.fc-timeline-event .fc-content
+  padding-left 10px
+
+  &::before
+    position absolute
+    content ""
+    left 0
+    top 0
+    bottom 0
+    width 5px
+    border-radius 2px
+    background rgba(10,10,10,0.2)
+    box-shadow inset 0 1px 3px rgba(0,0,0,0.4),
+                     0 1px 1px rgba(255,255,255,0.3)
+// .fc-widget-content
+//   width 100%
+//   height 100%
+//   background-color coral
+//   opacity 0.2
+
+.fc-highlight
+  opacity 0.8
+  box-shadow inset 0 0 1px $green
+  background $green-lighten-30
+  background-size 30px 30px
+  background-image linear-gradient(135deg,
+                      rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%,
+                      rgba(255, 255, 255, .15) 50%,
+                      rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+
+  animation animate-stripes 2s linear infinite
+
+@keyframes animate-stripes
+  0%
+    background-position 0 0
+  100%
+    background-position 60px 0

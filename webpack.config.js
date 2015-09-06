@@ -92,7 +92,7 @@ module.exports = (CONF, build) => {
       // Reference: https://github.com/MoOx/eslint-loader
       //
       // The pluggable linting utility for JavaScript
-      test: /\.js$/,
+      test: /(!min)\.js$/,
       exclude: /node_modules/,
       loader: 'eslint'
     }, {

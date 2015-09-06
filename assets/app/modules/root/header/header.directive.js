@@ -3,9 +3,7 @@ let Header = () => ({
   replace: true,
   transclude: true,
   template: require('./header.html'),
-  scope: false,
-
-  controller: () => {}
+  scope: false
 });
 
 export default Header;
